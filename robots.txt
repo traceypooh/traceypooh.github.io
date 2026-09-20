@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow: /pelican-wedding/
 
-Sitemap: http://traceypooh.github.com/sitemap.xml 
+Sitemap: https://traceypooh.github.io/sitemap.xml
