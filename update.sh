@@ -3,13 +3,9 @@
 mydir=${0:a:h}
 cd $mydir/.
 
-# regen sitemap
-wget -qO sitemap.xml https://traceypooh.github.io/poohtini/sitemap.xml
-perl -i -pe 's=</urlset>=\n  <url>\n    <loc>http://traceypooh.github.com/</loc>\n  </url>\n</urlset>=' \
-  sitemap.xml
+# (no sitemap to regen: robots.txt points to poohtini's always up-to-date index.xml)
 
-
-wget -qO- 'https://api.github.com/users/traceypooh/repos?per_page=1000'| jq -r '.[] |select(.has_pages) | [.name, .description] | @tsv' |sort |fgrep -v traceypooh.github.com |tee repos.tsv
+wget -qO- 'https://api.github.com/users/traceypooh/repos?per_page=1000'| jq -r '.[] |select(.has_pages) | [.name, .description] | @tsv' |sort |grep -Fv traceypooh.github.io |tee repos.tsv
 
 
 IFS=$'\n'; # NEWLINE / ENTER / RETURN splitting, not SPACE

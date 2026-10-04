@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /pelican-wedding/
 
-Sitemap: https://traceypooh.github.io/sitemap.xml
+# poohtini's blogtini build makes this RSS feed w/ every post -- google takes RSS as a sitemap
+Sitemap: https://traceypooh.github.io/poohtini/index.xml
